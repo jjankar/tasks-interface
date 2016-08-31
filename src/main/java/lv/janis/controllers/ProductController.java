@@ -31,7 +31,6 @@ public class ProductController {
             @RequestParam("price") String price,
             @RequestParam("vatRate") String vatRate) {
         int amount = Integer.valueOf(available);
-        double value = Double.valueOf(price);
         float vat = Float.valueOf(vatRate);
         ProductInterface product = new Product(name, amount,new Money(price),vat);
         repository.save(product);
