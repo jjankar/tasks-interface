@@ -27,10 +27,12 @@ public class ProductController {
     @RequestMapping(value = "/product/add", method = RequestMethod.POST)
     public String addProduct(@RequestParam("name") String name,
             @RequestParam("available") String available,
-            @RequestParam("price") String price) {
+            @RequestParam("price") String price,
+            @RequestParam("vatRate") String vatRate) {
         int amount = Integer.valueOf(available);
-        int value = Integer.valueOf(price);
-        ProductInterface product = new Product(name, amount, value);
+        double value = Double.valueOf(price);
+        float vat = Float.valueOf(vatRate);
+        ProductInterface product = new Product(name, amount,vat);
         repository.save(product);
         return "redirect:/products";
     }
