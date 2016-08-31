@@ -1,6 +1,9 @@
 package lv.janis.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
 import lv.janis.domain.money.Money;
+import lv.janis.domain.product.DTProduct;
 import lv.janis.domain.product.Product;
 import lv.janis.domain.product.ProductInterface;
 import lv.janis.repositories.ProductRepository;
@@ -47,8 +50,12 @@ public class ProductController {
     //show all products
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     public String contacts(Model model) {
-        
-        model.addAttribute("products", repository.findAll());
+        List<DTProduct> products = new ArrayList<DTProduct>();
+        for (ProductInterface prodoct:repository.findAll())
+        {
+          products.add(new DTProduct(prodoct)); 
+        }
+        model.addAttribute("products", products);
         return "products";
     }
 

@@ -48,5 +48,7 @@ public interface ProductInterface {
      * @param vatRate the vatRate to set
      */
     void setVatRate(float vatRate);
+
+    public String getId();
     
 }

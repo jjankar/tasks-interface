@@ -16,7 +16,7 @@ public class DTProduct {
         
     }
 
-    public DTProduct(Product product) {
+    public DTProduct(ProductInterface product) {
         this.id = product.getId();
         this.name = product.getName();
         this.available = String.valueOf(product.getAvailable()) ;
