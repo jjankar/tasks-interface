@@ -13,6 +13,12 @@ public class Money implements MoneyInterface {
     public Money() {
     }
     
+    public Money(String price) {
+        double value = Double.valueOf(price);
+        this.minorUnit = (int) (value%100);
+        this.majorUnit = (int) (value/100);
+    }
+    
     public Money(int minorUnit, int majorUnit) {
         this.minorUnit = minorUnit;
         this.majorUnit = majorUnit;
