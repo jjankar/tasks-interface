@@ -47,6 +47,7 @@ public class ProductController {
     //show all products
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     public String contacts(Model model) {
+        
         model.addAttribute("products", repository.findAll());
         return "products";
     }
