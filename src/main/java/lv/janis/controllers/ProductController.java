@@ -39,7 +39,7 @@ public class ProductController {
 
     //delete product
     @RequestMapping(value = "product/delete/{id}", method = RequestMethod.POST)
-    public String deleteUser(@PathVariable String id) {
+    public String deleteProduct(@PathVariable String id) {
         repository.delete(id);
         return "redirect:/products";
     }
