@@ -1,5 +1,6 @@
 package lv.janis.controllers;
 
+import lv.janis.domain.money.Money;
 import lv.janis.domain.product.Product;
 import lv.janis.domain.product.ProductInterface;
 import lv.janis.repositories.ProductRepository;
@@ -32,7 +33,7 @@ public class ProductController {
         int amount = Integer.valueOf(available);
         double value = Double.valueOf(price);
         float vat = Float.valueOf(vatRate);
-        ProductInterface product = new Product(name, amount,vat);
+        ProductInterface product = new Product(name, amount,new Money(price),vat);
         repository.save(product);
         return "redirect:/products";
     }
