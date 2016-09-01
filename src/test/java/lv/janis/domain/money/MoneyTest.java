@@ -1,7 +1,11 @@
 package lv.janis.domain.money;
 
-import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
@@ -19,7 +23,10 @@ public class MoneyTest {
     public void testGetMinorUnit() {
         System.out.println("getMinorUnit");
         Money instance = new Money(999, 0);
-        assertEquals(999, instance.getMinorUnit());
+        int expResult = 999;
+        int result = instance.getMinorUnit();
+        assertEquals(expResult, result);
+
     }
 
     /**
@@ -28,10 +35,11 @@ public class MoneyTest {
     @Test
     public void testSetMinorUnit() {
         System.out.println("setMinorUnit");
-        int minorUnit = 999;
         Money instance = new Money();
-        instance.setMinorUnit(minorUnit);
-        assertEquals(999, instance.getMinorUnit());
+        instance.setMinorUnit(999);
+        int expResult = 999;
+        int result = instance.getMinorUnit();
+        assertEquals(expResult, result);
     }
 
     /**
@@ -41,7 +49,9 @@ public class MoneyTest {
     public void testGetMajorUnit() {
         System.out.println("getMajorUnit");
         Money instance = new Money(0, 999);
-        assertEquals(999, instance.getMajorUnit());
+        int expResult = 999;
+        int result = instance.getMajorUnit();
+        assertEquals(expResult, result);
     }
 
     /**
@@ -50,10 +60,11 @@ public class MoneyTest {
     @Test
     public void testSetMajorUnit() {
         System.out.println("setMajorUnit");
-        int majorUnit = 999;
         Money instance = new Money();
-        instance.setMajorUnit(majorUnit);
-        assertEquals(999, instance.getMajorUnit());
+        instance.setMajorUnit(999);
+        int expResult = 999;
+        int result = instance.getMajorUnit();
+        assertEquals(expResult, result);
     }
 
 }
