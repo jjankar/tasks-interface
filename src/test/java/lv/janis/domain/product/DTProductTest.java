@@ -2,6 +2,7 @@
 package lv.janis.domain.product;
 
 
+import lv.janis.domain.money.Money;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -13,7 +14,24 @@ public class DTProductTest {
     
     public DTProductTest() {
     }
-
+   
+    /**
+     * Test of DTProduct constructor.
+     */
+    @Test
+    public void testConstructor(){
+     ProductInterface product = new Product();
+     Money money = new Money(27,22);
+     product.setPrice(money);
+     DTProduct dtproduct = new DTProduct(product);
+     String expResult = "22.27";
+     String result = dtproduct.getPrice();
+     assertEquals(expResult, result);
+     
+     
+     
+    }
+    
     /**
      * Test of getId method, of class DTProduct.
      */
