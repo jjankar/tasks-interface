@@ -16,6 +16,16 @@ public class DTProduct {
         
     }
 
+    public DTProduct(String id, String name, String available, String price, String vatRate) {
+        this.id = id;
+        this.name = name;
+        this.available = available;
+        this.price = price;
+        this.vatRate = vatRate;
+    }
+    
+    
+
     public DTProduct(ProductInterface product) {
         this.id = product.getId();
         this.name = product.getName();
