@@ -28,13 +28,24 @@ public class MoneyTest {
     
     /**
      * Test of Constructor, of class Money(String price).
+     * Limit (0,0)
      */
-    public void testConstructor(){
-        Money money = new Money("22.27");
-        assertEquals(27, money.getMinorUnit());
-        assertEquals(22, money.getMinorUnit());
-        
+    public void testConstructorLimit1(){
+        Money money = new Money("0.0");
+        assertEquals(0, money.getMinorUnit());
+        assertEquals(0, money.getMinorUnit());       
     }
+    
+    /**
+     * Test of Constructor, of class Money(String price).
+     * Limit (0,5)
+     */
+    public void testConstructorLimit2(){
+        Money money = new Money("0.5");
+        assertEquals(5, money.getMinorUnit());
+        assertEquals(0, money.getMinorUnit());       
+    }
+    
     /**
      * Test of setMinorUnit method, of class Money.
      */
