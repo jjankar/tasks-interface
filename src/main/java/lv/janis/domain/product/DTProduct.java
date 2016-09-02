@@ -16,7 +16,8 @@ public class DTProduct {
         
     }
 
-    public DTProduct(String id, String name, String available, String price, String vatRate) {
+    public DTProduct(String id, String name,
+                     String available, String price, String vatRate) {
         this.id = id;
         this.name = name;
         this.available = available;
@@ -30,9 +31,13 @@ public class DTProduct {
         this.id = product.getId();
         this.name = product.getName();
         this.available = String.valueOf(product.getAvailable()) ;
-        int totalCents = product.getPrice().getMinorUnit()+
-                           product.getPrice().getMajorUnit()*100;
-        this.price = String.valueOf(totalCents/100);
+        //catanate strings to set price
+        //---------------------------------------------------------------
+        String major = String.valueOf(product.getPrice().getMajorUnit());
+        String minor = String.valueOf(product.getPrice().getMinorUnit());
+        this.price = major+"."+minor;
+        //end 
+        //---------------------------------------------------------------
         this.vatRate = String.valueOf(product.getVatRate());
     }
 
