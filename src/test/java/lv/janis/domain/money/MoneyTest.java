@@ -25,7 +25,16 @@ public class MoneyTest {
         assertEquals(expResult, result);
 
     }
-
+    
+    /**
+     * Test of Constructor, of class Money(String price).
+     */
+    public void testConstructor(){
+        Money money = new Money("22.27");
+        assertEquals(27, money.getMinorUnit());
+        assertEquals(22, money.getMinorUnit());
+        
+    }
     /**
      * Test of setMinorUnit method, of class Money.
      */
