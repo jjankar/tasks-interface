@@ -39,9 +39,9 @@ public class MoneyTest {
      * Test of Constructor, of class Money(String price). Limit (0,5)
      */
     @Test
-    public void testConstructorLimit05() {
-        Money money = new Money("0.5");
-        assertEquals(5, money.getMinorUnit());
+    public void testConstructorLimit5() {
+        Money money = new Money("0.456567");
+        assertEquals(46, money.getMinorUnit());
         assertEquals(0, money.getMajorUnit());
     }
     
@@ -49,10 +49,10 @@ public class MoneyTest {
      * Test of Constructor, of class Money(String price). Limit (5,0)
      */
     @Test
-    public void testConstructorLimit50() {
-        Money money = new Money("5.0");
-        assertEquals(0, money.getMinorUnit());
-        assertEquals(5, money.getMajorUnit());
+    public void testConstructorLimit4() {
+        Money money = new Money("123.54444444");
+        assertEquals(54, money.getMinorUnit());
+        assertEquals(123, money.getMajorUnit());
     }
 
     /**
