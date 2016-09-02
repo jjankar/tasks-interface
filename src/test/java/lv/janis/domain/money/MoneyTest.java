@@ -1,6 +1,5 @@
 package lv.janis.domain.money;
 
-
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -25,27 +24,37 @@ public class MoneyTest {
         assertEquals(expResult, result);
 
     }
-    
+
     /**
-     * Test of Constructor, of class Money(String price).
-     * Limit (0,0)
+     * Test of Constructor, of class Money(String price). Limit (0,0)
      */
-    public void testConstructorLimit1(){
+    @Test
+    public void testConstructorLimit00() {
         Money money = new Money("0.0");
         assertEquals(0, money.getMinorUnit());
-        assertEquals(0, money.getMinorUnit());       
+        assertEquals(0, money.getMajorUnit());
+    }
+
+    /**
+     * Test of Constructor, of class Money(String price). Limit (0,5)
+     */
+    @Test
+    public void testConstructorLimit05() {
+        Money money = new Money("0.5");
+        assertEquals(5, money.getMinorUnit());
+        assertEquals(0, money.getMajorUnit());
     }
     
     /**
-     * Test of Constructor, of class Money(String price).
-     * Limit (0,5)
+     * Test of Constructor, of class Money(String price). Limit (5,0)
      */
-    public void testConstructorLimit2(){
-        Money money = new Money("0.5");
-        assertEquals(5, money.getMinorUnit());
-        assertEquals(0, money.getMinorUnit());       
+    @Test
+    public void testConstructorLimit50() {
+        Money money = new Money("5.0");
+        assertEquals(0, money.getMinorUnit());
+        assertEquals(5, money.getMajorUnit());
     }
-    
+
     /**
      * Test of setMinorUnit method, of class Money.
      */
