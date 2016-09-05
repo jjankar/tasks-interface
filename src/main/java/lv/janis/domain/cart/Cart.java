@@ -72,14 +72,14 @@ public class Cart extends Stock implements CartInterface {
     /**
      * @return the costumerData
      */
-    public String getCostumerData() {
+    public String getCostumer() {
         return costumer;
     }
 
     /**
-     * @param costumerData the costumerData to set
+     * @param costumer the costumerData to set
      */
-    public void setCostumerData(String costumer) {
+    public void setCostumer(String costumer) {
         this.costumer = costumer;
     }
 
