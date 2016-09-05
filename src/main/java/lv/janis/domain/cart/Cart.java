@@ -4,6 +4,7 @@ import lv.janis.domain.money.Money;
 import lv.janis.domain.money.MoneyInterface;
 import lv.janis.domain.product.ProductInterface;
 import lv.janis.domain.stock.Stock;
+import org.springframework.data.annotation.Id;
 
 /**
  *
@@ -11,6 +12,8 @@ import lv.janis.domain.stock.Stock;
  */
 public class Cart extends Stock implements CartInterface {
 
+    @Id
+    String costumerData;
     private MoneyInterface subTotal;
     private MoneyInterface vatAmount;
     private MoneyInterface total;
