@@ -34,6 +34,16 @@ public class MoneyTest {
         assertEquals(0, money.getMinorUnit());
         assertEquals(0, money.getMajorUnit());
     }
+    
+    /**
+     * Test of Constructor, of class Money(String price). Limit (2,null)
+     */
+     @Test
+    public void testConstructorLimit22nocoma() {
+        Money money = new Money("2");
+        assertEquals(0, money.getMinorUnit());
+        assertEquals(2, money.getMajorUnit());
+    }
 
     /**
      * Test of Constructor, of class Money(String price). Limit (0,5)
