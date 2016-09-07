@@ -8,7 +8,7 @@
 	<h1>Add Product Form</h1>
     <form action="#" th:action="@{/product/add}" th:object="${product}" method="post">
     	<p>Name: <input type="text" th:field="*{name}" /></p>
-        <p>Price: <input type="text" th:field="*{price}" /></p>
+        <p>Price: <input type="text" th:field="*{price}" value="0" /></p>
         <p>Available: <input type="text" th:field="*{available}" /></p>
         <p>VatRate: <input type="text" th:field="*{vatRate}" /></p>
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
