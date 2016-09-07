@@ -41,7 +41,7 @@ public class ProductController {
     }
 
     //delete product
-    @RequestMapping(value = "product/delete/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "product/delete/{id}", method = RequestMethod.GET)
     public String deleteProduct(@PathVariable String id) {
         repository.delete(id);
         return "redirect:/products";
