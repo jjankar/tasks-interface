@@ -30,15 +30,22 @@ public class CartController {
         return "shop";
     }
 
-    //delete product
-    @RequestMapping(value = "/product/addToCart/{id}", method = RequestMethod.GET)
+    //add product to cart
+    @RequestMapping(value = "/product/addToCart/{id}", method = RequestMethod.POST)
     public String deleteProduct(@PathVariable String id, HttpSession session) {
         List<DTProduct> products = new ArrayList<>();
         products = (List<DTProduct>) session.getAttribute("products");
         products.forEach((product) -> {
-            System.out.println(product.getId());
+            if (id.equals(product.getId()))
+            System.out.println(product.getName());
         });
         return "redirect:/shop/card";
+    }
+    
+    //view cart
+    @RequestMapping(value = "/shop/card", method = RequestMethod.POST)
+    public String addProduct() {
+        return "cart";
     }
 
 }
