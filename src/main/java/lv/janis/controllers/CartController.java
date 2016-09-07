@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import lv.janis.domain.product.DTProduct;
 import lv.janis.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,15 +15,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  * @author janis
  */
+@Controller
 public class CartController {
 
     @Autowired
     private ProductRepository repository;
 
     //show shop
-    @RequestMapping(value = "/shop/form", method = RequestMethod.GET)
-    public String shopForm(HttpSession session) {
-        List<DTProduct> products = new ArrayList<>();
+    @RequestMapping(value = "/shop/form")
+    public String shopForm(List<DTProduct> products, HttpSession session) {
         repository.findAll().stream().forEach((prodoct) -> {
             products.add(new DTProduct(prodoct));
         });
