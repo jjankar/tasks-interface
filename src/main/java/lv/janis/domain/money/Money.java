@@ -13,25 +13,32 @@ public class Money implements MoneyInterface {
     }
 
     public Money(String price) {
-        int point = price.indexOf(".") + 1;
-        String minor = price.substring(point);
-        // raunding operation for minorUnit 
-        //-------------------------------------------------------------
+        String minor = "0";
+        String major = price;
+        int point = 0;
         int one = 0;
-        if (minor.length() > 2) {
-            int lim = Integer.valueOf(minor.substring(point + 2, point + 3));
-            if (lim > 5) {
-                one = 1;
+        if (price.contains(".")) {
+            point = price.indexOf(".") + 1;
+            minor = price.substring(point);
+            major = price.substring(0, point - 1);
+            // raunding operation for minorUnit 
+            //-------------------------------------------------------------
+
+            if (minor.length() > 2) {
+                int lim = Integer.valueOf(minor.substring(point + 2, point + 3));
+                if (lim > 5) {
+                    one = 1;
+                }
+                minor = price.substring(point, point + 2);
             }
-            minor = price.substring(point, point + 2);
+            //end of raunding; 
+            //--------------------------------------------------------------
+
         }
-        //end of raunding; 
-        //--------------------------------------------------------------
 
         this.minorUnit = Integer.valueOf(minor) + one;
 
         // no problems with majorUnit
-        String major = price.substring(0, point - 1);
         this.majorUnit = Integer.valueOf(major);
     }
 
