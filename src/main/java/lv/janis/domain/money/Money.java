@@ -13,6 +13,9 @@ public class Money implements MoneyInterface {
     }
 
     public Money(String price) {
+        if (price==null){
+            price="0";
+        }
         String minor = "0";
         String major = price;
         int point = 0;
