@@ -18,7 +18,7 @@
                 <td th:text="${product.price}"></td>
                 <td th:text="${product.available}"></td>
                 <td>
-                    <form th:action="@{/product/addToCart/{id}(id=${product.id})}" 
+                    <form th:action="@{/product/addToCart/{id}(id=${product.id})}"> 
                           <button type="submit">Add to cart</button>
                     </form>
                 </td>
